@@ -319,7 +319,7 @@ struct ebyeMaker {
   Preslice<aod::V0s> perCollisionV0 = o2::aod::v0::collisionId;
   Preslice<aod::McParticles> perCollisionMcParts = o2::aod::mcparticle::mcCollisionId;
 
-  template<class P>
+  template <class P>
   int getPartTypeMother(P const& mcPart)
   {
     for (auto& mother : mcPart.template mothers_as<aod::McParticles>()) {
@@ -1416,8 +1416,7 @@ struct ebyeMaker {
           //   continue;
           if (candidateTrack.pdgcodemoth > 0)
             selMask |= candidateTrack.pdgcodemoth;
-        }
-        else {
+        } else {
           selMask = candidateTrack.pdgcodemoth;
         }
         mcMiniTrkTable(
